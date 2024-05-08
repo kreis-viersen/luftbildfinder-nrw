@@ -1,0 +1,28 @@
+[general]
+name=Luftbildfinder NRW
+description=Find and display aerial images (German State of North Rhine-Westphalia) - Luftbilder finden und laden in NRW 
+about=Remark:
+      This plugin loads aerial images for the German State of North Rhine-Westphalia, that's why the plugin is only available in German language.
+
+      Mit diesem Tool könne Luftbilder aus folgenden WMS von Geobasis NRW gefunden und geladen werden  
+      - historische Luftbilder
+      - DOP
+      - iDOP
+      - vDOP
+tags=dop,idop,vdop,luftbild,luftbilder,nrw
+version=0.1.0
+qgisMinimumVersion=3.16
+author=Kreis Viersen
+email=open@kreis-viersen.de
+tracker=https://github.com/kreis-viersen/luftbildfinder-nrw
+
+repository=https://github.com/kreis-viersen/luftbildfinder-nrw
+
+homepage=https://github.com/kreis-viersen/luftbildfinder-nrw
+
+icon=luftbildfinder-nrw.png
+
+server=False
+deprecated=False
+changelog=v0.1.0:
+    - erstes Release
