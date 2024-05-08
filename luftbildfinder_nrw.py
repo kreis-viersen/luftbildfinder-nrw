@@ -311,11 +311,14 @@ class LuftbildfinderNRW:
                     date_text = date_text.strip()
                     if re.match(date_regex, date_text):
                         try:
-                            if "-" in date_text:
-                                date_obj = datetime.strptime(date_text, "%Y-%m-%d")
-                            elif "." in date_text:
-                                date_obj = datetime.strptime(date_text, "%d.%m.%Y")
-                            standardized_date = datetime.strftime(date_obj, "%Y-%m-%d")
+                            if not"-00-00" in date_text:
+                                if "-" in date_text:
+                                    date_obj = datetime.strptime(date_text, "%Y-%m-%d")
+                                elif "." in date_text:
+                                    date_obj = datetime.strptime(date_text, "%d.%m.%Y")
+                                standardized_date = datetime.strftime(date_obj, "%Y-%m-%d")
+                            elif "-00-00" in date_text:
+                                standardized_date = date_text
                             year = standardized_date.split("-")[0]
                             if service == "wms_nw_hist_dop":
                                 layer = f"nw_hist_dop_{year}"

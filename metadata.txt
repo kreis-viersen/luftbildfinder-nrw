@@ -10,7 +10,7 @@ about=Remark:
       - iDOP
       - vDOP
 tags=dop,idop,vdop,luftbild,luftbilder,nrw
-version=0.1.0
+version=0.2.0
 qgisMinimumVersion=3.16
 author=Kreis Viersen
 email=open@kreis-viersen.de
@@ -24,5 +24,7 @@ icon=luftbildfinder-nrw.png
 
 server=False
 deprecated=False
-changelog=v0.1.0:
+changelog=v0.2.0:
+    - berücksichtige auch Bilder ohne Angabe von Tag und Monat
+    v0.1.0
     - erstes Release
