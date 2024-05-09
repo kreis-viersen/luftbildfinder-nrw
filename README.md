@@ -1,6 +1,6 @@
 # luftbildfinder-nrw
 
-### _QGIS-Plugin - Luftbilder für NRW finden und laden_
+### _QGIS-Plugin - mit Klick in das Kartenfenster Luftbilder für NRW finden und laden_
 
 Mit diesem Tool können Luftbilder aus folgenden WMS von Geobasis NRW mit einem Klick in das Kartenfenster gefunden und geladen werden
 - historische Luftbilder
