@@ -2,7 +2,7 @@
 
 ### _QGIS-Plugin - Luftbilder für NRW finden und laden_
 
-Mit diesem Tool können Luftbilder aus folgenden WMS von Geobasis NRW gefunden und geladen werden
+Mit diesem Tool können Luftbilder aus folgenden WMS von Geobasis NRW mit einem Klick in das Kartenfenster gefunden und geladen werden
 - historische Luftbilder
 - DOP
 - iDOP
@@ -17,5 +17,5 @@ Fragen, Anmerkungen, Fehlermeldungen etc. können z.B. über ein Issue oder auch
 Das Plugin ist im offiziellen [QGIS-Plugin-Repository] enthalten und kann in QGIS über das Hauptmenü (*Erweiterungen -> Erweiterungen verwalten und installieren*) installiert und auch bei Verfügbarkeit einer neuen Version aktualisiert werden.
 
 
-[open@kreis-viersen.de]: <mailto:open@kreis-viersen.de?subject=xplan-reader>
+[open@kreis-viersen.de]: <mailto:open@kreis-viersen.de?subject=luftbildfinder>
 [QGIS-Plugin-Repository]: <https://plugins.qgis.org/plugins/luftbildfinder-nrw/>
