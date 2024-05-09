@@ -4,7 +4,7 @@ description=Find and display aerial images (German State of North Rhine-Westphal
 about=Remark:
       This plugin loads aerial images for the German State of North Rhine-Westphalia, that's why the plugin is only available in German language.
 
-      Mit diesem Tool könne Luftbilder aus folgenden WMS von Geobasis NRW gefunden und geladen werden  
+      Mit diesem Tool können Luftbilder aus folgenden WMS von Geobasis NRW gefunden und geladen werden  
       - historische Luftbilder
       - DOP
       - iDOP
