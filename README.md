@@ -10,7 +10,11 @@ Mit diesem Tool können Luftbilder aus folgenden WMS von Geobasis NRW mit einem 
 
 Fragen, Anmerkungen, Fehlermeldungen etc. können z.B. über ein Issue oder auch gerne per E-Mail an [open@kreis-viersen.de] mitgeteilt werden.
 
+<img src=./luftbildfinder-nrw.gif>
+
 <img src=./luftbildfinder-nrw_dialog.png>
+
+
 
 ## Installation
 
