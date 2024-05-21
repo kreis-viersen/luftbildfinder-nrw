@@ -1,4 +1,6 @@
-# luftbildfinder-nrw
+# luftbildfinder-nrw 
+
+<img src="./luftbildfinder-nrw.png" width="100">
 
 ### _QGIS-Plugin - mit Klick in das Kartenfenster Luftbilder für NRW finden und laden_
 
