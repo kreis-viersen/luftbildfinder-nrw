@@ -408,6 +408,8 @@ class LuftbildfinderNRW:
                         rlayerNode.setExpanded(False)
                         QgsProject.instance().addMapLayer(rlayer)
 
+                self.add_metadata_layer = False
+
     def restore_previous_tool(self):
         if self.previousTool is not None:
             self.iface.mapCanvas().setMapTool(self.previousTool)
