@@ -170,10 +170,9 @@ class LuftbildfinderNRW:
                 self.checkboxes.clear()
 
                 for year, date, service, infolayer, layer in sorted_dates:
-                    cb = QCheckBox(
-                        date + "    " + service.replace("wms_nw_", ""), dialog
-                    )
-                    cb.setChecked(current_states.get(date, True))
+                    checkbox_text = f"{date}    {service.replace('wms_nw_', '')}"
+                    cb = QCheckBox(checkbox_text, dialog)
+                    cb.setChecked(current_states.get(checkbox_text, True))
                     checkboxLayout.addWidget(cb)
                     self.checkboxes.append(cb)
 
@@ -318,7 +317,9 @@ class LuftbildfinderNRW:
                                     date_obj = datetime.strptime(date_text, "%Y-%m-%d")
                                 elif "." in date_text:
                                     date_obj = datetime.strptime(date_text, "%d.%m.%Y")
-                                standardized_date = datetime.strftime(date_obj, "%Y-%m-%d")
+                                standardized_date = datetime.strftime(
+                                    date_obj, "%Y-%m-%d"
+                                )
                             year = standardized_date.split("-")[0]
                             if service == "wms_nw_hist_dop":
                                 layer = f"nw_hist_dop_{year}"
