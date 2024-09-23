@@ -10,7 +10,7 @@ about=Remark:
       - iDOP
       - vDOP
 tags=dop,idop,vdop,luftbild,luftbilder,nrw
-version=0.4.0
+version=0.5.0
 qgisMinimumVersion=3.16
 author=Kreis Viersen
 email=open@kreis-viersen.de
@@ -24,7 +24,9 @@ icon=luftbildfinder-nrw.png
 
 server=False
 deprecated=False
-changelog=v0.4.0:
+changelog=v0.5.0:
+    - füge Layer bei bestimmten Konstellationen nicht doppelt hinzu
+    v0.4.0:
     - behalte Auswahl wenn Sortierreihenfolge geändert wird
     v0.3.0
     - behebe Fehler bei Option Metadatenlayer 

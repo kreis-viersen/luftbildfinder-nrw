@@ -368,29 +368,33 @@ class LuftbildfinderNRW:
             new_group = root.insertGroup(0, group_name)
 
             metadata_layers = []
+            added_layers = set()
             for year, date, service, infolayer, layer in selected_years:
-                if not any(item[1] == infolayer for item in metadata_layers):
-                    metadata_layers.append((service, infolayer))
-                BASE_URL = f"https://www.wms.nrw.de/geobasis/{service}"
-                urlWithParams = f"crs=EPSG:25832&format=image/png&layers={layer}&styles&url={BASE_URL}"
-                rlayer = QgsRasterLayer(urlWithParams, f"Luftbild {layer}", "wms")
-                if not rlayer.isValid():
-                    pass
-                else:
-                    QgsProject.instance().addMapLayer(rlayer, False)
-                    new_group.insertLayer(-1, rlayer)
-                    rlayerNode = root.findLayer(rlayer.id())
-                    rlayerNode.setExpanded(False)
-                    QgsProject.instance().addMapLayer(rlayer)
+                if layer not in added_layers:
+                    if not any(item[1] == infolayer for item in metadata_layers):
+                        metadata_layers.append((service, infolayer))
+                    BASE_URL = f"https://www.wms.nrw.de/geobasis/{service}"
+                    urlWithParams = f"crs=EPSG:25832&format=image/png&layers={layer}&styles&url={BASE_URL}"
+                    rlayer = QgsRasterLayer(urlWithParams, f"Luftbild {layer}", "wms")
+                    if not rlayer.isValid():
+                        pass
+                    else:
+                        QgsProject.instance().addMapLayer(rlayer, False)
+                        new_group.insertLayer(-1, rlayer)
+                        rlayerNode = root.findLayer(rlayer.id())
+                        rlayerNode.setExpanded(False)
+                        QgsProject.instance().addMapLayer(rlayer)
 
-                    self.canvas.flashGeometries(
-                        [QgsGeometry.fromPointXY(original_pt)],
-                        source_crs,
-                        QColor(255, 0, 0, 255),
-                        QColor(255, 0, 0, 255),
-                        int(10),
-                        int(500),
-                    )
+                        added_layers.add(layer)
+
+                        self.canvas.flashGeometries(
+                            [QgsGeometry.fromPointXY(original_pt)],
+                            source_crs,
+                            QColor(255, 0, 0, 255),
+                            QColor(255, 0, 0, 255),
+                            int(10),
+                            int(500),
+                        )
 
             if self.add_metadata_layer:
                 for service, infolayer in metadata_layers:
