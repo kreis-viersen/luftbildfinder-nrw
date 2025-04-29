@@ -6,6 +6,7 @@
 
 Mit diesem Tool können Luftbilder aus folgenden WMS von Geobasis NRW mit einem Klick in das Kartenfenster gefunden und geladen werden
 - [historische Luftbilder]
+- [historische Luftbilder (iDOP)]
 - [DOP]
 - [iDOP]
 - [vDOP]
@@ -29,6 +30,7 @@ Das Plugin ist im offiziellen [QGIS-Plugin-Repository] enthalten und kann in QGI
 [open@kreis-viersen.de]: <mailto:open@kreis-viersen.de?subject=luftbildfinder>
 [QGIS-Plugin-Repository]: <https://plugins.qgis.org/plugins/luftbildfinder-nrw/>
 [historische Luftbilder]: <https://www.bezreg-koeln.nrw.de/geobasis-nrw/produkte-und-dienste/luftbild-und-satellitenbildinformationen/historische-luftbild-1>
+[historische Luftbilder (iDOP)]: <https://www.bezreg-koeln.nrw.de/geobasis-nrw/produkte-und-dienste/luftbild-und-satellitenbildinformationen/historische-luftbild-4>
 [DOP]: <https://www.bezreg-koeln.nrw.de/geobasis-nrw/produkte-und-dienste/luftbild-und-satellitenbildinformationen/aktuelle-luftbild-und-0>
 [iDOP]: <https://www.bezreg-koeln.nrw.de/geobasis-nrw/produkte-und-dienste/luftbild-und-satellitenbildinformationen/aktuelle-luftbild-und-4>
 [vDOP]: <https://www.bezreg-koeln.nrw.de/geobasis-nrw/produkte-und-dienste/luftbild-und-satellitenbildinformationen/aktuelle-luftbild-und-0>

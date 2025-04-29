@@ -6,11 +6,12 @@ about=Remark:
 
       Mit diesem Tool können Luftbilder aus folgenden WMS von Geobasis NRW gefunden und geladen werden  
       - historische Luftbilder
+      - historische Luftbilder (iDOP)
       - DOP
       - iDOP
       - vDOP
 tags=dop,idop,vdop,luftbild,luftbilder,nrw
-version=0.5.0
+version=0.6.0
 qgisMinimumVersion=3.16
 author=Kreis Viersen
 email=open@kreis-viersen.de
@@ -24,7 +25,9 @@ icon=luftbildfinder-nrw.png
 
 server=False
 deprecated=False
-changelog=v0.5.0:
+changelog=v0.6.0:
+    - finde auch historische iDOPs 
+    v0.5.0:
     - füge Layer bei bestimmten Konstellationen nicht doppelt hinzu
     v0.4.0:
     - behalte Auswahl wenn Sortierreihenfolge geändert wird

@@ -226,19 +226,21 @@ class LuftbildfinderNRW:
             self.add_metadata_layer = state == Qt.Checked
 
         def selected_years():
-            selected_years = [
-                int(cb.text().split("-")[0]) for cb in self.checkboxes if cb.isChecked()
-            ]
-            ordered_dates = [
-                t for year in selected_years for t in self.dates if int(t[0]) == year
-            ]
-
+            ordered_dates = []
+            for cb in self.checkboxes:
+                if cb.isChecked():
+                    cb_text = cb.text()
+                    for t in self.dates:
+                        if f"{t[1]}    {t[2].replace('wms_nw_', '')}" == cb_text:
+                            ordered_dates.append(t)
+                            break
             return ordered_dates
 
         self.dates = []
 
         available_services = [
             ("wms_nw_hist_dop", "nw_hist_dop_info", ""),
+            ("wms_nw_hist_idop", "nw_hist_idop_info", ""),
             ("wms_nw_dop", "nw_dop_utm_info", "nw_dop_rgb"),
             ("wms_nw_idop", "nw_idop_info", "nw_idop_rgb"),
             ("wms_nw_vdop", "nw_vdop_info", "nw_vdop_rgb"),
@@ -323,6 +325,8 @@ class LuftbildfinderNRW:
                             year = standardized_date.split("-")[0]
                             if service == "wms_nw_hist_dop":
                                 layer = f"nw_hist_dop_{year}"
+                            if service == "wms_nw_hist_idop":
+                                layer = f"nw_hist_idop_{year}"
 
                             standardized_dates.append(
                                 (year, standardized_date, service, infolayer, layer)
