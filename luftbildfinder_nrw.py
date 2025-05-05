@@ -379,7 +379,10 @@ class LuftbildfinderNRW:
                         metadata_layers.append((service, infolayer))
                     BASE_URL = f"https://www.wms.nrw.de/geobasis/{service}"
                     urlWithParams = f"crs=EPSG:25832&format=image/png&layers={layer}&styles&url={BASE_URL}"
-                    rlayer = QgsRasterLayer(urlWithParams, f"Luftbild {layer}", "wms")
+                    layer_title = f"Luftbild {layer}"
+                    if layer in ("nw_dop_rgb", "nw_idop_rgb", "nw_vdop_rgb"):
+                        layer_title += f" {year}"
+                    rlayer = QgsRasterLayer(urlWithParams, layer_title, "wms")
                     if not rlayer.isValid():
                         pass
                     else:
