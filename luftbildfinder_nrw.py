@@ -186,9 +186,9 @@ class LuftbildfinderNRW:
             deselectAllButton = QPushButton("keine wählen")
             toggleSelectionButton = QPushButton("Auswahl umkehren")
 
-            buttonBox.addButton(selectAllButton, QDialogButtonBox.ActionRole)
-            buttonBox.addButton(deselectAllButton, QDialogButtonBox.ActionRole)
-            buttonBox.addButton(toggleSelectionButton, QDialogButtonBox.ActionRole)
+            buttonBox.addButton(selectAllButton, QDialogButtonBox.ButtonRole.ActionRole)
+            buttonBox.addButton(deselectAllButton, QDialogButtonBox.ButtonRole.ActionRole)
+            buttonBox.addButton(toggleSelectionButton, QDialogButtonBox.ButtonRole.ActionRole)
 
             selectAllButton.clicked.connect(selectAll)
             deselectAllButton.clicked.connect(deselectAll)
@@ -202,7 +202,7 @@ class LuftbildfinderNRW:
             layout.addWidget(addMetadataCheckbox)
 
             okCancelBox = QDialogButtonBox(
-                QDialogButtonBox.Ok | QDialogButtonBox.Cancel
+                QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
             )
             layout.addWidget(okCancelBox)
             okCancelBox.accepted.connect(dialog.accept)
@@ -223,7 +223,7 @@ class LuftbildfinderNRW:
                 checkbox.setChecked(not checkbox.isChecked())
 
         def updateMetadataLayer(state):
-            self.add_metadata_layer = state == Qt.Checked
+            self.add_metadata_layer = state == Qt.CheckState.Checked
 
         def selected_years():
             ordered_dates = []
@@ -281,21 +281,21 @@ class LuftbildfinderNRW:
                 result = blocking_request.get(req)
                 if (
                     blocking_request.reply().attribute(
-                        QNetworkRequest.HttpStatusCodeAttribute
+                        QNetworkRequest.Attribute.HttpStatusCodeAttribute
                     )
                     != 200
                 ):
                     self.iface.messageBar().pushMessage(
                         "Luftbildfinder NRW",
                         "HTTP Fehler für URL: " + full_url,
-                        level=Qgis.Critical,
+                        level=Qgis.MessageLevel.Critical,
                         duration=30,
                     )
             except Exception as e:
                 self.iface.messageBar().pushMessage(
                     "Luftbildfinder NRW",
                     "Netzwerkproblem mit: " + full_url + " Fehler: " + str(e),
-                    level=Qgis.Critical,
+                    level=Qgis.MessageLevel.Critical,
                     duration=30,
                 )
 
@@ -346,13 +346,13 @@ class LuftbildfinderNRW:
             self.iface.messageBar().pushMessage(
                 "Luftbildfinder NRW",
                 "Keine Luftbilder an dieser Position gefunden",
-                level=Qgis.Warning,
+                level=Qgis.MessageLevel.Warning,
                 duration=5,
             )
             return
 
         dialog = create_date_selection_dialog(self.dates)
-        if dialog.exec_():
+        if dialog.exec():
             selected_years = selected_years()
             root = QgsProject.instance().layerTreeRoot()
 

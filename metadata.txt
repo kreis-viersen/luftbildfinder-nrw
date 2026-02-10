@@ -25,6 +25,7 @@ icon=luftbildfinder-nrw.png
 
 server=False
 deprecated=False
+supportsQt6=True
 changelog=v0.6.0:
     - finde auch historische iDOPs 
     v0.5.0:
